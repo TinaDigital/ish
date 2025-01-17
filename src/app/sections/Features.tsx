@@ -1,4 +1,6 @@
 import { Shield, Zap, Clock, Users } from 'lucide-react'
+import Image from 'next/image'
+import soldador from "../../../public/soldando_oscura.jpg"
 
 const features = [
   {
@@ -60,9 +62,9 @@ export default function Features() {
           <div className="relative aspect-square">
             <div className="absolute inset-0 bg-gradient-to-br from-accent to-accent-secondary opacity-20 rounded-full blur-3xl" />
             <div className="relative h-full rounded-3xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?auto=format&fit=crop&q=80"
-                alt="Medical equipment"
+              <Image
+                src={soldador}
+                alt="Soldador trabajando"
                 className="object-cover h-full w-full"
               />
             </div>
@@ -72,4 +74,3 @@ export default function Features() {
     </section>
   )
 }
-

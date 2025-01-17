@@ -66,7 +66,11 @@ export default function Services() {
               }`}
               onMouseEnter={() => setActiveIndex(index)}
             >
-              <div className="p-3 rounded-full inline-block mb-6 bg-accent/10 text-accent">
+              <div className={`p-3 rounded-full inline-block mb-6 transition-colors duration-300 ${
+                activeIndex === index 
+                  ? 'bg-dark/10 text-dark'
+                  : 'bg-accent/10 text-accent'
+              }`}>
                 {service.icon}
               </div>
               <h3 className="font-display text-2xl font-bold mb-4 flex items-center gap-2">

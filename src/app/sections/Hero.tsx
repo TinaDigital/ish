@@ -60,10 +60,6 @@ export default function Hero() {
             </div>
             <div className="text-light/70">Clientes satisfechos</div>
           </div>
-          <div>
-            <div className="font-display text-4xl font-bold text-accent">24/7</div>
-            <div className="text-light/70">Soporte técnico</div>
-          </div>
         </div>
       </div>
     </section>
