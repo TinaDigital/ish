@@ -27,8 +27,18 @@ const steps = [
 ]
 
 export default function Process() {
-  const refs = steps.map(() => useRef(null))
-  const inViewStates = refs.map(ref => useInView(ref, { once: true, margin: "-100px" }))
+  const ref1 = useRef(null)
+  const ref2 = useRef(null)
+  const ref3 = useRef(null)
+  const ref4 = useRef(null)
+  
+  const isInView1 = useInView(ref1, { once: true, margin: "-100px" })
+  const isInView2 = useInView(ref2, { once: true, margin: "-100px" })
+  const isInView3 = useInView(ref3, { once: true, margin: "-100px" })
+  const isInView4 = useInView(ref4, { once: true, margin: "-100px" })
+  
+  const refs = [ref1, ref2, ref3, ref4]
+  const inViewStates = [isInView1, isInView2, isInView3, isInView4]
 
   return (
     <section id="process" className="py-12 sm:py-24 bg-dark-secondary">

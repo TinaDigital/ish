@@ -94,7 +94,7 @@ function FeatureCard({ feature, index, activeIndex, setActiveIndex, frontCard = 
       x: 0,
       scale: 1 - custom * (isMobile ? 0.008 : 0.02),
       y: custom * (isMobile ? 4 : 12),
-      opacity: 1, // Eliminada la transparencia
+      opacity: 1,
       rotate: 0,
       transition: {
         type: "spring",
@@ -188,9 +188,9 @@ export default function Features() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <motion.div
-            initial={{ x: -1000, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : { x: -1000, opacity: 0 }}
-            transition={{ type: "spring", bounce: 0.4, duration: 1 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
               Por qué elegir
@@ -229,9 +229,9 @@ export default function Features() {
           </motion.div>
           <motion.div 
             className="relative h-full"
-            initial={{ x: 1000, opacity: 0 }}
-            animate={isInView ? { x: 0, opacity: 1 } : { x: 1000, opacity: 0 }}
-            transition={{ type: "spring", bounce: 0.4, duration: 1, delay: 0.2 }}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent to-accent-secondary opacity-20 rounded-full blur-3xl" />
             <div className="relative h-full rounded-3xl overflow-hidden">
