@@ -1,4 +1,5 @@
 import { CheckCircle, Shield, Users, Lightbulb } from 'lucide-react'
+import { ReactNode } from 'react'
 
 export default function WhyChooseUs() {
   return (
@@ -32,7 +33,13 @@ export default function WhyChooseUs() {
   )
 }
 
-function ReasonCard({ icon, title, description }) {
+interface ReasonCardProps {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}
+
+function ReasonCard({ icon, title, description }: ReasonCardProps) {
   return (
     <div className="relative p-6 bg-white">
       <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-accent"></div>
@@ -43,4 +50,3 @@ function ReasonCard({ icon, title, description }) {
     </div>
   )
 }
-
