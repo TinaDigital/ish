@@ -1,13 +1,21 @@
-const clients = [
-  "Hospital Alemán",
-  "IADT",
-  "Medicus SA",
-  "Sanatorio San José",
-  "Hospital Sardá",
-  "MIG SA",
-  "GH Working Team",
-  "VEOLIA"
-]
+import Image from "next/image";
+import hospitalAleman from "../../../public/logos/Hospital-Aleman.png";
+import iadt from "../../../public/logos/IADT 01.png";
+import medicus from "../../../public/logos/MEDICUS.png";
+import sanatorioSanJose from "../../../public/logos/san_jose.png";
+import hospitalSarda from "../../../public/logos/RAMON SARDA.png";
+import mig from "../../../public/logos/MIG S.A.png";
+import veolia from "../../../public/logos/VEOLIA.png";
+
+const clientLogos = [
+  { name: "Hospital Alemán", logo: hospitalAleman },
+  { name: "IADT", logo: iadt },
+  { name: "Medicus SA", logo: medicus },
+  { name: "Sanatorio San José", logo: sanatorioSanJose },
+  { name: "Hospital Sardá", logo: hospitalSarda },
+  { name: "MIG SA", logo: mig },
+  { name: "VEOLIA", logo: veolia }
+];
 
 export default function Clients() {
   return (
@@ -30,22 +38,30 @@ export default function Clients() {
         
         <div className="flex overflow-hidden gap-8 py-4">
           <div className="flex gap-8 animate-infinite-scroll">
-            {[...clients, ...clients].map((client, index) => (
+            {[...clientLogos, ...clientLogos].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 py-4 px-8 bg-dark-secondary rounded-lg min-w-[200px] flex items-center justify-center"
+                className="flex-shrink-0 py-4 px-8 rounded-lg min-w-[200px] h-[100px] flex items-center justify-center"
               >
-                <span className="font-medium text-light/90">{client}</span>
+                <Image
+                  src={client.logo}
+                  alt={`Logo de ${client.name}`}
+                  className="w-auto h-full object-contain"
+                />
               </div>
             ))}
           </div>
           <div className="flex gap-8 animate-infinite-scroll" aria-hidden="true">
-            {[...clients, ...clients].map((client, index) => (
+            {[...clientLogos, ...clientLogos].map((client, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 py-4 px-8 bg-dark-secondary rounded-lg min-w-[200px] flex items-center justify-center"
+                className="flex-shrink-0 py-4 px-8 rounded-lg min-w-[200px] h-[100px] flex items-center justify-center"
               >
-                <span className="font-medium text-light/90">{client}</span>
+                <Image
+                  src={client.logo}
+                  alt={`Logo de ${client.name}`}
+                  className="w-auto h-full object-contain"
+                />
               </div>
             ))}
           </div>
@@ -54,4 +70,3 @@ export default function Clients() {
     </section>
   )
 }
-
