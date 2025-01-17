@@ -27,6 +27,9 @@ const steps = [
 ]
 
 export default function Process() {
+  const refs = steps.map(() => useRef(null))
+  const inViewStates = refs.map(ref => useInView(ref, { once: true, margin: "-100px" }))
+
   return (
     <section id="process" className="py-12 sm:py-24 bg-dark-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -47,8 +50,8 @@ export default function Process() {
 
         <div className="grid md:grid-cols-4 gap-8">
           {steps.map((step, index) => {
-            const ref = useRef(null)
-            const isInView = useInView(ref, { once: true, margin: "-100px" })
+            const ref = refs[index]
+            const isInView = inViewStates[index]
 
             return (
               <motion.div 

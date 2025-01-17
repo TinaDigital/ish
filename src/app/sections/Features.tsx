@@ -105,7 +105,7 @@ function FeatureCard({ feature, index, activeIndex, setActiveIndex, frontCard = 
     })
   }
 
-  function handleDragEnd(_: any, info: { offset: { x: number } }) {
+  function handleDragEnd(_: MouseEvent | TouchEvent | PointerEvent, info: { offset: { x: number } }) {
     const threshold = isMobile ? 30 : 100
     if (Math.abs(info.offset.x) > threshold) {
       setExitX(Math.sign(info.offset.x) * 150)
