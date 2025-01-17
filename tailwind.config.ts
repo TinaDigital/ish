@@ -22,6 +22,7 @@ module.exports = {
       animation: {
         'infinite-scroll': 'infinite-scroll 25s linear infinite',
         'infinite-scroll-reverse': 'infinite-scroll-reverse 25s linear infinite',
+        'grid': 'grid 15s linear infinite',
       },
       keyframes: {
         'infinite-scroll': {
@@ -31,6 +32,10 @@ module.exports = {
         'infinite-scroll-reverse': {
           from: { transform: 'translateX(-50%)' },
           to: { transform: 'translateX(0)' },
+        },
+        'grid': {
+          '0%': { transform: 'translateY(-50%)' },
+          '100%': { transform: 'translateY(0)' },
         },
       },
     },

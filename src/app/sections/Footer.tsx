@@ -1,5 +1,7 @@
 import Link from 'next/link'
-import { Facebook, Twitter, Linkedin, Mail, Phone } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
+import Image from 'next/image'
+import logo from '../../../public/LOGO TINA MKT-07.png'
 
 export default function Footer() {
   return (
@@ -71,7 +73,7 @@ export default function Footer() {
                 <Facebook className="w-5 h-5" />
               </a>
               <a href="#" className="text-light/70 hover:text-light transition-colors">
-                <Twitter className="w-5 h-5" />
+                <Instagram className="w-5 h-5" />
               </a>
               <a href="#" className="text-light/70 hover:text-light transition-colors">
                 <Linkedin className="w-5 h-5" />
@@ -79,11 +81,11 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="border-t border-light/10 pt-8 text-center text-light/40">
-          <p>&copy; 2023 ISH. Todos los derechos reservados.</p>
+        <div className="border-t border-light/10 pt-8 text-center text-light/40 flex items-center justify-center">
+           <p>COPYRIGHT &copy; {new Date().getFullYear()} TINA DIGITAL</p>
+           <Image src={logo} alt="Logo Tina-Design" height={50} />
         </div>
       </div>
     </footer>
   )
 }
-
