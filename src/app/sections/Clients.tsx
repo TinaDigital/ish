@@ -2,8 +2,6 @@ import Image from "next/image";
 import hospitalAleman from "../../../public/logos/Hospital-Aleman.png";
 import iadt from "../../../public/logos/IADT 01.png";
 import medicus from "../../../public/logos/MEDICUS.png";
-import sanatorioSanJose from "../../../public/logos/san_jose.png";
-import hospitalSarda from "../../../public/logos/RAMON SARDA.png";
 import mig from "../../../public/logos/MIG S.A.png";
 import veolia from "../../../public/logos/VEOLIA.png";
 
@@ -11,8 +9,6 @@ const clientLogos = [
   { name: "Hospital Alemán", logo: hospitalAleman },
   { name: "IADT", logo: iadt },
   { name: "Medicus SA", logo: medicus },
-  { name: "Sanatorio San José", logo: sanatorioSanJose },
-  { name: "Hospital Sardá", logo: hospitalSarda },
   { name: "MIG SA", logo: mig },
   { name: "VEOLIA", logo: veolia }
 ];
@@ -32,7 +28,7 @@ export default function Clients() {
         </div>
       </div>
 
-      <div className="relative">
+      <div className="relative max-w-7xl mx-auto overflow-hidden">
         <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-dark to-transparent z-10" />
         <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-dark to-transparent z-10" />
         

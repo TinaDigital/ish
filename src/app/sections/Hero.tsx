@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 import { NumberTicker } from '@/app/components/ui/NumberTicker'
 import { RetroGrid } from '@/app/components/ui/RetroGrid'
 import { motion } from 'framer-motion'
+import { InteractiveHoverButton } from '@/app/components/ui/Button'
 
 export default function Hero() {
   const [isClient, setIsClient] = useState(false);
@@ -68,12 +69,12 @@ export default function Hero() {
                 Explorar
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="#contact"
-                className="flex-1 sm:flex-none sm:w-auto text-center px-4 sm:px-6 py-2.5 sm:py-3 border border-light/10 text-light text-sm sm:text-base font-medium rounded-full hover:bg-light/5 transition-colors"
+              <InteractiveHoverButton
+                onClick={() => window.location.href='#contact'}
+                className="flex-1 sm:flex-none sm:w-auto"
               >
                 Contactar
-              </Link>
+              </InteractiveHoverButton>
             </motion.div>
           </motion.div>
         ) : (
@@ -96,12 +97,12 @@ export default function Hero() {
                 Explorar
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link
-                href="#contact"
-                className="flex-1 sm:flex-none sm:w-auto text-center px-4 sm:px-6 py-2.5 sm:py-3 border border-light/10 text-light text-sm sm:text-base font-medium rounded-full hover:bg-light/5 transition-colors"
+              <InteractiveHoverButton
+                onClick={() => window.location.href='#contact'}
+                className="flex-1 sm:flex-none sm:w-auto"
               >
                 Contactar
-              </Link>
+              </InteractiveHoverButton>
             </div>
           </div>
         )}

@@ -6,6 +6,16 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    screens: {
+      '2xs': '320px',
+      'xs': '375px',
+      'sm': '640px',
+      'md': '768px', 
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px',
+      '3xl': '1920px',
+    },
     extend: {
       colors: {
         dark: '#030305',
@@ -38,7 +48,26 @@ module.exports = {
           '100%': { transform: 'translateY(0)' },
         },
       },
+      spacing: {
+        '13': '3.25rem',
+        '15': '3.75rem',
+        '128': '32rem',
+        '144': '36rem',
+      },
+      maxWidth: {
+        '8xl': '88rem',
+        '9xl': '96rem',
+      },
+      minHeight: {
+        '0': '0',
+        '1/4': '25vh',
+        '1/2': '50vh',
+        '3/4': '75vh',
+        'full': '100vh',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }

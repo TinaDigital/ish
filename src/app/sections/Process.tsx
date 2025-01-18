@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect, useState } from 'react'
 
 const steps = [
     {
@@ -27,10 +27,11 @@ const steps = [
 ]
 
 export default function Process() {
-  const ref1 = useRef(null)
-  const ref2 = useRef(null)
-  const ref3 = useRef(null)
-  const ref4 = useRef(null)
+  const ref1 = useRef<HTMLDivElement>(null)
+  const ref2 = useRef<HTMLDivElement>(null)
+  const ref3 = useRef<HTMLDivElement>(null)
+  const ref4 = useRef<HTMLDivElement>(null)
+  const [activeStep, setActiveStep] = useState<number | null>(null)
   
   const isInView1 = useInView(ref1, { once: true, margin: "-100px" })
   const isInView2 = useInView(ref2, { once: true, margin: "-100px" })
@@ -39,6 +40,26 @@ export default function Process() {
   
   const refs = [ref1, ref2, ref3, ref4]
   const inViewStates = [isInView1, isInView2, isInView3, isInView4]
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth >= 768) return
+
+      refs.forEach((ref, index) => {
+        if (!ref.current) return
+        
+        const rect = ref.current.getBoundingClientRect()
+        const windowHeight = window.innerHeight
+
+        if (rect.top < windowHeight * 0.7 && rect.bottom > windowHeight * 0.3) {
+          setActiveStep(index)
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <section id="process" className="py-12 sm:py-24 bg-dark-secondary">
@@ -62,6 +83,7 @@ export default function Process() {
           {steps.map((step, index) => {
             const ref = refs[index]
             const isInView = inViewStates[index]
+            const isActive = activeStep === index
 
             return (
               <motion.div 
@@ -73,9 +95,9 @@ export default function Process() {
                   duration: 0.5,
                   delay: index * 0.2
                 }}
-                className="relative group"
+                className={`relative group ${isActive ? 'bg-accent/10 md:bg-transparent' : ''} md:p-0 p-4 rounded-xl`}
               >
-                <div className="absolute -inset-4 rounded-xl bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
+                <div className="absolute -inset-4 rounded-xl bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity blur-xl hidden md:block" />
                 <div className="relative">
                   <motion.div 
                     initial={{ scale: 0.5 }}
@@ -84,7 +106,7 @@ export default function Process() {
                       duration: 0.5,
                       delay: index * 0.2 + 0.3
                     }}
-                    className="font-display text-6xl font-bold text-accent/20 mb-4"
+                    className={`font-display text-6xl font-bold mb-4 ${isActive ? 'text-accent md:text-accent/20' : 'text-accent/20'}`}
                   >
                     {step.number}
                   </motion.div>
