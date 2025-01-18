@@ -59,7 +59,7 @@ export default function Process() {
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [refs])
 
   return (
     <section id="process" className="py-12 sm:py-24 bg-dark-secondary">

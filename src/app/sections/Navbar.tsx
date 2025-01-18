@@ -117,7 +117,7 @@ export default function Navbar() {
             </motion.div>
 
             <div className="hidden lg:flex items-center space-x-10">
-              {navItems.map((item, i) => (
+              {navItems.map((item) => (
                 <motion.div
                   key={item.name}
                   className="relative"

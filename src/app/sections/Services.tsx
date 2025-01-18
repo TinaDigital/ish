@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Wrench, Cog, PenToolIcon as Tool, ArrowUpRight, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
@@ -131,6 +131,15 @@ const services = [
 export default function Services() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [selectedService, setSelectedService] = useState<number | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768)
+    checkMobile()
+    
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   return (
     <section id="services" className="py-24 relative bg-dark-secondary">
@@ -179,7 +188,7 @@ export default function Services() {
                 {service.description}
               </p>
               <ul className={`space-y-2 2xs:space-y-3 transition-all duration-300`}>
-                {service.features.slice(0, window.innerWidth >= 768 ? 4 : 2).map((feature, i) => (
+                {service.features.slice(0, isMobile ? 2 : 4).map((feature, i) => (
                   <li key={i} className="flex items-center gap-2 text-sm 2xs:text-base">
                     <div className={`w-1 h-1 rounded-full ${
                       activeIndex === index
