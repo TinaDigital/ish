@@ -147,7 +147,7 @@ export default function Services() {
         <div className="max-w-3xl">
           <h2 className="font-display text-3xl 2xs:text-4xl md:text-5xl font-bold mb-4">
             ¿Qué
-            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"> Hacemos?</span>
+            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"> hacemos?</span>
           </h2>
           <p className="text-light/70 text-base 2xs:text-lg mb-12">
             Brindamos soluciones confiables y personalizadas para el suministro de gases medicinales bajo Normas IRAM/ISO 7396/1, garantizando calidad y eficiencia en cada proyecto.

@@ -11,7 +11,7 @@ import { InteractiveHoverButton } from '@/app/components/ui/Button'
 export default function Hero() {
   const [isClient, setIsClient] = useState(false);
   const whatsappMessage = "Hola, me gustaría conocer más sobre sus servicios.";
-  const whatsappNumber = "5491150979192";
+  const whatsappNumber = "5491170364799";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
   useEffect(() => {

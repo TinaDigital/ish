@@ -71,8 +71,8 @@ export default function Process() {
           className="max-w-3xl mb-16"
         >
           <h2 className="font-display text-4xl md:text-5xl font-bold mb-6">
-            Nuestro Proceso de
-            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"> Trabajo</span>
+            Nuestro proceso de
+            <span className="bg-gradient-to-r from-accent to-accent-secondary bg-clip-text text-transparent"> trabajo</span>
           </h2>
           <p className="text-light/70 text-lg">
             Un enfoque sistemático y profesional para garantizar resultados excepcionales en cada proyecto.

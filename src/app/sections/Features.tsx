@@ -4,7 +4,7 @@ import { Shield, Zap, Clock, Users } from 'lucide-react'
 import Image from 'next/image'
 import soldador from "../../../public/soldando_perfil3.jpg"
 import { AnimatePresence, motion, useMotionValue, useTransform, useInView } from 'framer-motion'
-import { useState, useEffect, ReactNode, useRef } from 'react'
+import { useState, useEffect, ReactNode, useRef, lazy } from 'react'
 
 interface Feature {
   icon: ReactNode;
@@ -159,6 +159,8 @@ function FeatureCard({ feature, index, activeIndex, setActiveIndex, frontCard = 
   )
 }
 
+const LazyImage = lazy(() => import('next/image'))
+
 export default function Features() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
@@ -235,13 +237,18 @@ export default function Features() {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-accent to-accent-secondary opacity-20 rounded-full blur-3xl" />
             <div className="relative h-full rounded-3xl overflow-hidden">
-              <Image
-                src={soldador}
-                alt="Soldador trabajando"
-                className="object-cover h-full w-full"
-                fill
-                priority
-              />
+              <div className="relative aspect-video">
+                <LazyImage
+                  src={soldador}
+                  alt="Soldador trabajando"
+                  loading="lazy"
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority={false}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRg..."
+                />
+              </div>
             </div>
           </motion.div>
         </div>

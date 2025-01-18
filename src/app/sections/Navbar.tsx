@@ -8,9 +8,9 @@ import Image from 'next/image'
 import logo from "../../../public/ISH.png"
 
 const navItems = [
-  { name: '¿Que hacemos?', href: '#services' },
-  { name: '¿Por qué nosotros?', href: '#features' },
-  { name: '¿Cómo trabajamos?', href: '#process' },
+  { name: 'Qué hacemos', href: '#services' },
+  { name: 'Por qué nosotros', href: '#features' },
+  { name: 'Cómo trabajamos', href: '#process' },
   { name: 'Clientes', href: '#clients' },
 ]
 
@@ -100,6 +100,7 @@ export default function Navbar() {
     <>
       <div className="h-20" />
       <motion.nav 
+        aria-label="Navegación principal"
         initial={false}
         animate={{
           y: hidden ? -100 : 0,
@@ -145,12 +146,10 @@ export default function Navbar() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#contact"
                   className="px-6 py-2.5 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-dark font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/20"
                 >
-                  Contactar
+                  Contacto
                 </Link>
               </motion.div>
             </div>
@@ -160,6 +159,7 @@ export default function Navbar() {
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsOpen(!isOpen)}
               className="lg:hidden p-2 text-light/60 hover:text-light"
+              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
             >
               {isOpen ? <X /> : <Menu />}
             </motion.button>
@@ -202,13 +202,11 @@ export default function Navbar() {
                   className="mt-8"
                 >
                   <Link
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#contact"
                     className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-dark font-medium text-lg hover:opacity-90 transition-opacity shadow-lg shadow-accent/20"
                     onClick={() => setIsOpen(false)}
                   >
-                    Contactar
+                    Contacto
                   </Link>
                 </motion.div>
               </div>

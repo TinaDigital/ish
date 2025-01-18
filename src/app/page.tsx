@@ -1,12 +1,14 @@
-
+import dynamic from 'next/dynamic'
 import Navbar from './sections/Navbar'
 import Hero from './sections/Hero'
-import Services from './sections/Services'
-import Features from './sections/Features'
-import Clients from './sections/Clients'
-import Process from './sections/Process'
-import CTA from './sections/CTA'
-import Footer from './sections/Footer'
+
+// Lazy load components that are not critical for initial render
+const Services = dynamic(() => import('./sections/Services'))
+const Features = dynamic(() => import('./sections/Features'))
+const Clients = dynamic(() => import('./sections/Clients'))
+const Process = dynamic(() => import('./sections/Process'))
+const CTA = dynamic(() => import('./sections/CTA'))
+const Footer = dynamic(() => import('./sections/Footer'))
 
 export default function Home() {
   return (
