@@ -8,9 +8,9 @@ import Image from 'next/image'
 import logo from "../../../public/ISH.png"
 
 const navItems = [
-  { name: 'Servicios', href: '#services' },
-  { name: 'Características', href: '#features' },
-  { name: 'Proceso', href: '#process' },
+  { name: '¿Que hacemos?', href: '#services' },
+  { name: '¿Por qué nosotros?', href: '#features' },
+  { name: '¿Cómo trabajamos?', href: '#process' },
   { name: 'Clientes', href: '#clients' },
 ]
 
@@ -64,6 +64,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
+  
+  const whatsappMessage = "Hola, me gustaría conocer más sobre sus servicios."
+  const whatsappNumber = "5491150979192"
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
 
   useEffect(() => {
     const handleScroll = () => {
@@ -141,7 +145,9 @@ export default function Navbar() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Link
-                  href="#contact"
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="px-6 py-2.5 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-dark font-medium text-sm hover:opacity-90 transition-opacity shadow-lg shadow-accent/20"
                 >
                   Contactar
@@ -196,7 +202,9 @@ export default function Navbar() {
                   className="mt-8"
                 >
                   <Link
-                    href="#contact"
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-block px-8 py-3 rounded-full bg-gradient-to-r from-accent to-accent-secondary text-dark font-medium text-lg hover:opacity-90 transition-opacity shadow-lg shadow-accent/20"
                     onClick={() => setIsOpen(false)}
                   >

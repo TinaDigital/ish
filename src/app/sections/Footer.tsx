@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Facebook, Instagram, Linkedin, Mail, Phone } from 'lucide-react'
 import Image from 'next/image'
 import logo from '../../../public/LOGO TINA MKT-07.png'
+import ishLogo from '../../../public/ISH.png'
 
 export default function Footer() {
   return (
@@ -9,9 +10,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-12 mb-12">
           <div className="space-y-4">
-            <Link href="/" className="font-display text-2xl font-bold">
-              ISH<span className="text-accent">.</span>
-            </Link>
+            <Image src={ishLogo} alt="ISH" height={45} />
             <p className="text-light/70">
               Soluciones avanzadas en sistemas de gases medicinales.
             </p>
@@ -49,11 +48,7 @@ export default function Footer() {
                   Clientes
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-light/70 hover:text-light transition-colors">
-                  Contacto
-                </Link>
-              </li>
+              
             </ul>
           </div>
           <div>
