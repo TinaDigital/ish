@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { LazyMotion, domAnimation, m as motion, useAnimation, useInView } from "framer-motion";
+import { m as motion, useAnimation, useInView } from "framer-motion";
 import { ReactElement } from "react";
 
 interface BoxRevealProps {

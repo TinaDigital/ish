@@ -65,10 +65,6 @@ export default function Navbar() {
   const [hidden, setHidden] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
   
-  const whatsappMessage = "Hola, me gustaría conocer más sobre sus servicios."
-  const whatsappNumber = "5491150979192"
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
-
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY

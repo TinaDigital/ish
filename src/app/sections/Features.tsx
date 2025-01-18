@@ -1,7 +1,6 @@
 "use client"
 
 import { Shield, Zap, Clock, Users } from 'lucide-react'
-import Image from 'next/image'
 import soldador from "../../../public/soldando_perfil3.jpg"
 import { AnimatePresence, motion, useMotionValue, useTransform, useInView } from 'framer-motion'
 import { useState, useEffect, ReactNode, useRef, lazy } from 'react'
