@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from 'framer-motion'
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect, useState, useMemo } from 'react'
 
 const steps = [
     {
@@ -38,7 +38,7 @@ export default function Process() {
   const isInView3 = useInView(ref3, { once: true, margin: "-100px" })
   const isInView4 = useInView(ref4, { once: true, margin: "-100px" })
   
-  const refs = [ref1, ref2, ref3, ref4]
+  const refs = useMemo(() => [ref1, ref2, ref3, ref4], [])
   const inViewStates = [isInView1, isInView2, isInView3, isInView4]
 
   useEffect(() => {
