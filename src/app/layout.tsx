@@ -12,8 +12,9 @@ const outfit = Outfit({
 })
 
 export const metadata = {
-  title: 'ISH - Soluciones Avanzadas en Gases Medicinales',
-  description: 'Innovación y excelencia en sistemas de gases medicinales.',
+  title: 'ISH - Instalaciones y Servicios Hospitalarios',
+  description: 'Innovación y excelencia en instalaciones y servicios hospitalarios. Especialistas en gases medicinales, mantenimiento hospitalario y soluciones técnicas avanzadas.',
+  keywords: 'gases medicinales, mantenimiento hospitalario, instalaciones hospitalarias, servicios hospitalarios, soluciones técnicas, innovación hospitalaria'
 }
 
 export default function RootLayout({
@@ -27,4 +28,3 @@ export default function RootLayout({
     </html>
   )
 }
-

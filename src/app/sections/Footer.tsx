@@ -81,7 +81,9 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/instalaciones-y-servicios-hospitalarios/posts/?feedView=all" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-light/70 hover:text-light transition-colors"
                 aria-label="Visitar nuestro perfil de LinkedIn"
               >
