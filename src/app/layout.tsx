@@ -14,7 +14,13 @@ const outfit = Outfit({
 export const metadata = {
   title: 'ISH - Instalaciones y Servicios Hospitalarios',
   description: 'Innovación y excelencia en instalaciones y servicios hospitalarios. Especialistas en gases medicinales, mantenimiento hospitalario y soluciones técnicas avanzadas.',
-  keywords: 'gases medicinales, mantenimiento hospitalario, instalaciones hospitalarias, servicios hospitalarios, soluciones técnicas, innovación hospitalaria'
+  keywords: 'gases medicinales, mantenimiento hospitalario, instalaciones hospitalarias, servicios hospitalarios, soluciones técnicas, innovación hospitalaria',
+  icons: {
+    icon: '/favicon.ico',
+  },
+  verification: {
+    google: '40mMk64P_Cafq4O8UHMZC4kOIwsw8YXC5T4cTbb9YQU',
+  }
 }
 
 export default function RootLayout({
